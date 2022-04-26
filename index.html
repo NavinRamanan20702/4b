@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function func()
+        {
+          
+            var x=document.forms["eform"]["v1"].value;
+            if(x=="")
+            { 
+                alert("Name must be filled out");
+                document.eform.v1.focus();
+                return false;
+            }
+            if(!isNaN(x))
+            {
+                alert("Enter only characters");
+                document.eform.v1.focus();
+                return false;
+            }
+            if((x.length<5)||(x.length>20))
+            {
+                alert("Name must be between 5 and 20 characters");
+                document.eform.v1.focus();
+                return false;
+            }
+            var y=document.eform.t1.value;
+            if(y=="")
+            {
+                alert("Please Enter Mobile Number");
+                document.eform.t1.focus();
+                return false;
+            }
+            if(isNaN(y))
+            {
+                alert("Enter Valid Mobile Number");
+                document.eform.t1.focus();
+                return false;
+            }
+            if((y.length!=10))
+            {
+                alert("Your Mobile Number should be 10 digit Number");
+                document.eform.t1.focus();
+                return false;
+            }
+            var z=document.eform.gen;
+            var sts=0;
+            for(var i=0;i<z.length;i++)
+            {
+                if(z[i].checked==true)
+                {
+                    sts=1;
+                    break;
+                }
+            }
+            if(sts==0)
+            {
+                alert("Select Gender")
+                return false;
+            }
+        }     
+    </script>
+</head>
+<body>
+    
+
+
+<div class="container mt-5 justify-content-center">
+            <h2 class="text-danger text-center"><i>EVENT REGISTRATION FORM</i></h2>
+           <div >
+               <fieldset>
+               <form name="eform" action="#">
+                                <label for="name">NAME:</label> <br>
+                                <input type="text" id="v" name="v1" ><br>
+                                <label for="name">Date Of Birth:</label> <br>
+                                <input type="date" id="u" name="v2" required ><br>
+                           
+                                <label for="roll">Roll Number:</label><br>
+                                <input type="number" id="s" name="v3" required><br>
+                                <div class="row">
+                                    <div class="col-1">
+                                     
+                                        Gender  <br>
+                                    </div>
+                                    <div class="col-1">
+                                        <input type="radio" id="m" name="gen" name="fav_language" value="1">
+                                        <label for="1">Male</label><br>
+                                    </div>
+                                    <div class="col-1">
+                                        <input type="radio" id="p" name="gen" name="fav_language" value="2">
+                                        <label for="2">Female</label><br>
+                                    </div>
+                                    <div class="col-1">
+                                        <input type="radio" id="n" name="gen" name="fav_language" value="3">
+                                        <label for="3">Others</label> <br>
+                                    </div>
+                                </div>
+
+                                 
+                             
+                                Mobile Number: <br>
+                                <input type="text" id="m1" name="t1"  required> <br>
+                               
+                                E-mail: <br>
+                                <input type="email" id="m2"  ><br>
+                               <br>
+                               Password: <br>
+                                <input type="password" id="m3"  ><br>
+                               <br>
+                                Address: <br>
+                                <textarea id="m4" name="t4" rows=5 cols=50></textarea> <br>
+                               
+                             
+                                    <label for="State">Choose Your State:</label>
+                                    <select name="dpt" id="dpt">
+                                      <option value="tamilnadu">Tamilnadu</option>
+                                      <option value="karnataka">karnataka</option>
+                                      <option value="kerla">kerala</option>
+                                      <option value="andhrapradesh">Andhrapradesh</option>                                    
+                                      <option value="punjab">Punjab</option>
+                                    </select>
+                                    <br>
+                                     <div class="row">
+                                    <div class="col-1">
+                                     
+                                        Events  <br>
+                                    </div>
+                                    <div class="col-1">
+                                        <input type="checkbox" id="m" name="shri1" name="fav_language" value="1">
+                                        <label for="1">Singing</label><br>
+                                    </div>
+                                    <div class="col-1">
+                                        <input type="checkbox" id="m" name="shri1" name="fav_language" value="1">
+                                        <label for="2">Dancing</label><br>
+                                    </div>
+                                    <div class="col-1">
+                                        <input type="checkbox" id="n" name="shri2" name="fav_language" value="3">
+                                        <label for="3">Drama</label> <br>
+                                    </div>
+                                     <div class="col-1">
+                                        <input type="Checkbox" id="n" name="gen" name="fav_language" value="3">
+                                        <label for="4">Group Dance</label> <br>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-1">
+                                     
+                                        Accomodation  <br>
+                                    </div>
+                                    <div class="col-1">
+                                        <input type="radio" id="m9" name="gen" name="fav_language" value="1">
+                                        <label for="1">Yes</label><br>
+                                    </div>
+                                    <div class="col-1">
+                                        <input type="radio" id="m6" name="gen" name="fav_language" value="1">
+                                        <label for="2">No</label><br>
+                                    </div>
+                                   
+                                </div>
+                                   
+                                <input type="submit" value="Submit" onclick="func()">
+ 
+                                </form></fieldset></center>
+
+</body>
+</html>
